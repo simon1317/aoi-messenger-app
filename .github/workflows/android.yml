@@ -30,13 +30,13 @@ jobs:
         run: gradle assembleDebug --no-daemon --stacktrace
 
       - name: Rename APK
-        run: cp app/build/outputs/apk/debug/app-debug.apk AOI-쪽지.apk
+        run: cp app/build/outputs/apk/debug/app-debug.apk AOI-messenger.apk
 
       - name: Upload APK (artifact)
         uses: actions/upload-artifact@v4
         with:
           name: aoi-apk
-          path: AOI-쪽지.apk
+          path: AOI-messenger.apk
           if-no-files-found: error
 
       - name: Publish to Release (direct download)
@@ -44,5 +44,5 @@ jobs:
         with:
           tag_name: latest
           name: AOI 쪽지 최신 APK
-          body: "최신 빌드. AOI-쪽지.apk 를 폰에서 받아 설치하세요."
-          files: AOI-쪽지.apk
+          body: "최신 빌드. AOI-messenger.apk 를 폰에서 받아 설치하세요."
+          files: AOI-messenger.apk

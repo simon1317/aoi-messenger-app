@@ -15,8 +15,8 @@ android {
         versionName "1.0"
 
         // Firebase 설정값 (Firebase 콘솔에서 안드로이드 앱 등록 후 실제 값으로 교체됩니다)
-        buildConfigField "String", "FB_APP_ID", "\"1:171586010566:android:PLACEHOLDER\""
-        buildConfigField "String", "FB_API_KEY", "\"PLACEHOLDER_API_KEY\""
+        buildConfigField "String", "FB_APP_ID", "\"1:171586010566:android:dd33cd0b995f8f095186c7\""
+        buildConfigField "String", "FB_API_KEY", "\"AIzaSyDp8bnYpWUmVg79ht6nGcvE6YuvwVE6nTg\""
         buildConfigField "String", "FB_PROJECT_ID", "\"aoi-messenger\""
         buildConfigField "String", "FB_SENDER_ID", "\"171586010566\""
         buildConfigField "String", "FB_STORAGE_BUCKET", "\"aoi-messenger.firebasestorage.app\""
