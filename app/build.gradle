@@ -1,0 +1,57 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+
+android {
+    namespace 'com.jeonyu.aoimsg'
+    compileSdk 34
+
+    defaultConfig {
+        applicationId "com.jeonyu.aoimsg"
+        minSdk 24
+        targetSdk 34
+        versionCode 1
+        versionName "1.0"
+
+        // Firebase 설정값 (Firebase 콘솔에서 안드로이드 앱 등록 후 실제 값으로 교체됩니다)
+        buildConfigField "String", "FB_APP_ID", "\"1:171586010566:android:PLACEHOLDER\""
+        buildConfigField "String", "FB_API_KEY", "\"PLACEHOLDER_API_KEY\""
+        buildConfigField "String", "FB_PROJECT_ID", "\"aoi-messenger\""
+        buildConfigField "String", "FB_SENDER_ID", "\"171586010566\""
+        buildConfigField "String", "FB_STORAGE_BUCKET", "\"aoi-messenger.firebasestorage.app\""
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled false
+        }
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    kotlinOptions {
+        jvmTarget = '17'
+    }
+    buildFeatures {
+        buildConfig true
+    }
+}
+
+dependencies {
+    implementation platform('com.google.firebase:firebase-bom:33.1.2')
+    implementation 'com.google.firebase:firebase-messaging'
+    implementation 'com.google.firebase:firebase-firestore'
+    implementation 'com.google.firebase:firebase-auth'
+
+    implementation 'androidx.core:core-ktx:1.13.1'
+    implementation 'androidx.appcompat:appcompat:1.7.0'
+    implementation 'com.google.android.material:material:1.12.0'
+    implementation 'androidx.webkit:webkit:1.11.0'
+}
