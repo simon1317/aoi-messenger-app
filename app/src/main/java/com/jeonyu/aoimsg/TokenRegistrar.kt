@@ -19,9 +19,10 @@ object TokenRegistrar {
                 "appVer" to "1.0"
             )
             try {
+                // 웹과 같은 tokens 폴더에 저장 (보안 규칙이 이미 허용). platform=android 로 구분됨.
                 FirebaseFirestore.getInstance()
                     .collection("rooms").document(ROOM)
-                    .collection("android_tokens").document(token)
+                    .collection("tokens").document(token)
                     .set(data)
             } catch (e: Exception) { /* ignore */ }
         }
